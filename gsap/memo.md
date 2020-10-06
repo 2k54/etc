@@ -169,3 +169,16 @@ function tweenComplete() {
 - **onUpdate**：アニメーションが更新されるたびに（アニメーションがアクティブな間はすべてのフレームで）呼び出されます。
 - **onRepeat**：アニメーションが繰り返されるたびに呼び出されます。
 - **onReverseComplete**：アニメーションが反転されたときに再び開始に達したときに呼び出されます。
+
+### コールバックに引数を渡す
+
+```javascript
+gsap.to("#logo", {duration: 1, x: 100, onComplete: tweenComplete, onCompleteParams: ["done!"]});
+
+function tweenComplete(message) {
+  console.log(message);
+}
+
+// アニメーションが終わったら、tweenCompleteが動き、そこで引数を受け取って動作させる
+```
+

@@ -35,11 +35,11 @@ positionはとりあえず特に指定しなくても大丈夫
 
 ```javascript
 gsap.to("#test1 .box", {duration: 2, x: 300}); // 共通
-gsap.to("#test1 .box3", {duration: 5, x: 300}); // 個別みたいな書き方もできる
+gsap.to("#test1 .box3", {duration: 5, x: 300}); // ↑の設定後、個別みたいな書き方もできる
 
 // gsap.to
 // もっとも一般的なタイプ
-// gsap.to("何を", {何秒かけて: 2, どこへ: 300});（↑でidも指定してるのは便宜上）
+// gsap.to("何を", {何秒かけて: 2, どこへ: 300});（↑で何をにidも指定してるのは便宜上）
 // みたいな感じ
 // boxを2秒かけて300px横に動く
 // box3だけ　何秒かけてが5なので遅く動く
@@ -90,7 +90,7 @@ gsap.from("test2 .box", {duration: 1, x: 100});
 // css側で left: 0;　などの指定はいらない
 ```
 
-### gsap.from()
+### gsap.fromTo()
 
 開始と終了を両方設定できる
 
@@ -134,7 +134,7 @@ gsap.from(".box", {
 ```
 
 ```javascript
-// とりあえず staggerのとこだけ注目
+// とりあえず staggerのとこだけ注目何をしているかは後で調べる
 gsap.to(".box", 1, {
   scale: 0.1, 
   y: 60,
@@ -187,7 +187,7 @@ function tweenComplete(message) {
 ## アニメーションを操作する
 
 ```javascript
-// settimeOutとかを止めるときのように名前を付けてあげる
+// setTimeoutとかを止めるときのように名前を付けてあげる
 
 const moveLogo = gsap.to("#logo", {duration: 1, x: 100});
 

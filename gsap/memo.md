@@ -78,7 +78,7 @@ x: '50%' でも動いたけど
 
 ### gsap.from()
 
-設定した値から何も指定ない状態になる？
+設定した値から何も指定ない状態へ変化
 
 ```javascript
 gsap.from("test2 .box", {duration: 1, x: 100});
@@ -90,11 +90,13 @@ gsap.from("test2 .box", {duration: 1, x: 100});
 
 ### gsap.from()
 
-開始と終了を両方設定
+開始と終了を両方設定できる
 
 ```javascript
 gsap.fromTo("#test3 .box", {width: 0, height: 0}, {duration: 1.5, width: 100, height: 200});
 
 // gsap.fromTo("何を", {この状態から}, {この状態へ});
 ```
+
+とりあえずこの３つだけでもある程度はできそう
 

@@ -51,6 +51,9 @@
     <div class="box2 box"></div>
     <div class="box3 box"></div>
   </div>
+  <div id="test8" class="timeline">
+    <div class="box1 box"></div>
+  </div>
   <script>
     gsap.to("#test1 .box", {duration: 2, x: 300});
     // gsap.to(".box3", {duration: 5, x: '20%'});
@@ -94,6 +97,14 @@
     tl.to("#test7 .box1", {duration: 1, x: 200});
     tl.to("#test7 .box2", {duration: 1, x: 200, scale: 0.2});
     tl.to("#test7 .box3", {duration: 1, x: 200, scale: 2, y: 20});
+
+    let w = gsap.getProperty("#id", "width");
+
+    gsap.to("#test8 .box", {x: 200, onUpdate: function() {
+      let elem = this.targets()[0];
+      
+      console.log(gsap.getProperty(elem, "x"));
+    } });
 
 
   </script>

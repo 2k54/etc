@@ -150,3 +150,22 @@ gsap.to(".box", 1, {
 // ボックスをマス目上に並べてこれを設定を追加するとおもしろい
 ```
 
+## コールバック
+
+特定のアニメーション関連のイベントが発生したときに関数を呼び出す
+
+```javascript
+gsap.to("#logo", {duration: 1, x: 100, onComplete: tweenComplete});
+// gsap.to("#logo", {duration: 1, x: 100, 条件: 動かす関数});
+
+// ↑はonCompleteなのでアニメーションが終わったらこの関数が動く
+function tweenComplete() {
+  console.log("the tween is complete");
+}
+```
+
+- **onComplete**：アニメーションが完了したときに呼び出されます。
+- **onStart**：アニメーションの開始時に呼び出されます
+- **onUpdate**：アニメーションが更新されるたびに（アニメーションがアクティブな間はすべてのフレームで）呼び出されます。
+- **onRepeat**：アニメーションが繰り返されるたびに呼び出されます。
+- **onReverseComplete**：アニメーションが反転されたときに再び開始に達したときに呼び出されます。

@@ -15,10 +15,21 @@ GreenSock社が開発した高機能アニメーションライブラリ 現在G
   <div class="box2 box"></div>
   <div class="box3 box"></div>
 </div>
-
-cssはわかりやすいように色とサイズ指定くらいで試せます
-とりあえずpositionは特に指定しなくても大丈夫
 ```
+
+```css
+cssは自分がわかりやすいようにするために簡易的に色とサイズ指定くらいで試せます
+positionはとりあえず特に指定しなくても大丈夫
+
+margin-bottom: 10px;
+width: 100px;
+height: 100px;
+background-color: gray;
+
+ぐらいしか書いてない
+```
+
+
 
 ```javascript
 gsap.to(".box", {duration: 2, x: 300});

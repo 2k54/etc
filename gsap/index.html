@@ -4,19 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <style>
-    #test1 > .box {
-      margin-bottom: 10px;
-      width: 100px;
-      height: 100px;
-      background-color: gray;
-    }
-  </style>
+  <link rel="stylesheet" href="main.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 </head>
 <body>
   <div id="test1">
-    
+    <div class="box1 box"></div>
+    <div class="box2 box"></div>
+    <div class="box3 box"></div>
+  </div>
+  <div id="test2">
     <div class="box1 box"></div>
     <div class="box2 box"></div>
     <div class="box3 box"></div>
@@ -24,6 +21,8 @@
   <script>
     gsap.to(".box", {duration: 2, x: 300});
     // gsap.to(".box3", {duration: 5, x: '20%'});
+    gsap.to(".box1", {duration: 2, x: 300, backgroundColor: '#00ffff'});
+    gsap.to(".box2", {duration: 2, x: -10});
     gsap.to(".box3", {duration: 2, x: 300, rotate: 90, scale: 0.5});
 
   </script>

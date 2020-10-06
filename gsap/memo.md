@@ -32,8 +32,8 @@ background-color: gray;
 
 
 ```javascript
-gsap.to(".box", {duration: 2, x: 300});
-gsap.to(".box3", {duration: 5, x: 300});
+gsap.to(".box", {duration: 2, x: 300}); // 共通
+gsap.to(".box3", {duration: 5, x: 300}); // 個別みたいな書き方もできる
 
 // gsap.to
 // もっとも一般的なタイプ
@@ -50,6 +50,28 @@ gsap.to(".box3", {duration: 5, x: 300});
 // サイズを変えたり、回転したり
 gsap.to(".box3", {duration: 5, x: 300, rotate: 50, scale: 0.5});
 
-// 見て分かる通り、動いたあとの形にcssの設定を書いてくだけ
+// 見て分かる通り、動いたあとの状態の設定を書いてくだけ
 ```
 
+cssプロパティのショートコードの参考
+
+| gsap           | css                          |
+| -------------- | ---------------------------- |
+| x: 100         | transform: translateX(100px) |
+| y: 100         | transform: translateY(100px) |
+| rotation: 360  | transform: rotate(360deg)    |
+| rotationX: 360 | transform: rotateX(360deg)   |
+| rotationY: 360 | transform: rotateY(360deg)   |
+| skewX: 45      | transform: skewX(45deg)      |
+| skewY: 45      | transform: skewY(45deg)      |
+| scale: 2       | transform: scale(2, 2)       |
+| scaleX: 2      | transform: scaleX(2)         |
+| scaleY: 2      | transform: scaleY(2)         |
+| xPercent: -50  | transform: translateX(-50%)  |
+| yPercent: -50  | transform: translateY(-50%)  |
+
+この表をみると %の移動は xPercent: 50 なのかな？
+x: '50%' でも動いたけど
+**ショートコードを使ってください、なぜならそっちのほうが動作が早いから　みたいなことが書いてあったよ**
+
+ちなみに当たり前だけどJSなので font-sizeみたいな ケバブなプロパティは fontSize（キャメル）にしないとダメです

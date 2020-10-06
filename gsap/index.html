@@ -8,12 +8,15 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 </head>
 <body>
-  <div id="test1">
+  <div id="test1" class="to">
     <div class="box1 box"></div>
     <div class="box2 box"></div>
     <div class="box3 box"></div>
   </div>
-  <div id="test2">
+  <div id="test2" class="from">
+    <div class="box1 box"></div>
+  </div>
+  <div id="test3" class="fromto">
     <div class="box1 box"></div>
   </div>
   <script>
@@ -24,6 +27,8 @@
     gsap.to("#test1 .box3", {duration: 2, x: 300, rotate: 90, scale: 0.5});
 
     gsap.from("#test2 .box", {duration: 3, x: 300, opacity: 0, scale: 0.5});
+
+    gsap.fromTo("#test3 .box", {width: 0, height: 0}, {duration: 1.5, width: 100, height: 200});
 
   </script>
 </body>

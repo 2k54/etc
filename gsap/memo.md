@@ -87,3 +87,14 @@ gsap.from("test2 .box", {duration: 1, x: 100});
 // 1秒かけて 0に戻る
 // css側で left: 0;　などの指定はいらない
 ```
+
+### gsap.from()
+
+開始と終了を両方設定
+
+```javascript
+gsap.fromTo("#test3 .box", {width: 0, height: 0}, {duration: 1.5, width: 100, height: 200});
+
+// gsap.fromTo("何を", {この状態から}, {この状態へ});
+```
+

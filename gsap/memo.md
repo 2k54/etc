@@ -193,13 +193,19 @@ const moveLogo = gsap.to("#logo", {duration: 1, x: 100});
 
 // moveLogo これに対してなんやかんやする
 
+// 再生（アニメーションスタート）
+moveLogo.play();
+
 // 一時停止
 moveLogo.pause();
 
-// 再開
+// 再開（止めた場所から）
 moveLogo.resume();
 
-// 逆再生（最初に戻る
+// 再生（最初から）
+moveLogo.restart();
+
+// 逆再生（最初に戻る、もう一度発動させてもトグルはしない
 moveLogo.reverse();
 
 // ジャンプ（↓の場合は0.5秒地点へ）
@@ -214,5 +220,20 @@ moveLogo.timeScale(2); // 速度を倍速に
 
 // アニメーションの強制終了
 moveLogo.kill();
+```
+
+### タイムライン
+
+こんなこともできるよ程度で
+
+```javascript
+const tl = gsap.timeline({repeat: 3, repeatDelay: 1});
+// 基本設定に リピート回数とリピートの間隔を指定
+
+tl.to("#test7 .box1", {duration: 1, x: 200});
+tl.to("#test7 .box2", {duration: 1, x: 200, scale: 0.2});
+tl.to("#test7 .box3", {duration: 1, x: 200, scale: 2, y: 20});
+// ３つのboxが順番に動き、３つめまで動いたら、1秒開けて　また最初から動く
+// リピートを３回って指定だと計４回動きます（1回目はリピートではないから？
 ```
 

@@ -29,7 +29,7 @@
     <div class="box"></div>
     <div class="box"></div>
   </div>
-  <div id="test6" class="stagger">
+  <!-- <div id="test6" class="stagger">
     <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
@@ -45,6 +45,11 @@
     <div class="box"></div>
     <div class="box"></div>
     <div class="box"></div>
+  </div> -->
+  <div id="test7" class="timeline">
+    <div class="box1 box"></div>
+    <div class="box2 box"></div>
+    <div class="box3 box"></div>
   </div>
   <script>
     gsap.to("#test1 .box", {duration: 2, x: 300});
@@ -82,6 +87,13 @@
     //     from: "center"
     //   }
     // });
+
+    var tl = gsap.timeline({repeat: 3, repeatDelay: 1});
+
+    //add 3 tweens that will play in direct succession.
+    tl.to("#test7 .box1", {duration: 1, x: 200});
+    tl.to("#test7 .box2", {duration: 1, x: 200, scale: 0.2});
+    tl.to("#test7 .box3", {duration: 1, x: 200, scale: 2, y: 20});
 
 
   </script>

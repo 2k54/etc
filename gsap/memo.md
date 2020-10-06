@@ -1,9 +1,14 @@
 # GSAP
+
+https://greensock.com/
+
 GreenSock社が開発した高機能アニメーションライブラリ 現在GSAP 3
 従来はTweenLite, TweenMax, TimelineLite, TimelineMaxとライブラリが分割されていましたが、軽量化によりひとつになりシンプルな記述が可能になりました。軽量かつ多機能、豊富なプラグインなどの特徴があり世界中で用いられています。
 **※有料でしか見れないサイトで使うにはライセンス契約が必要**
 
 とりあえず簡単にCDNで試す
+
+https://greensock.com/get-started/
 
 ```html
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>

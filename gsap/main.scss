@@ -20,3 +20,20 @@
     background-color: gray;
   }
 }
+#test4 {
+  > .box {
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+  }
+}
+#test5 {
+  display: flex;
+  flex-wrap: nowrap;
+  > .box {
+    margin: 0 10px;
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+  }
+}

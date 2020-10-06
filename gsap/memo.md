@@ -100,3 +100,34 @@ gsap.fromTo("#test3 .box", {width: 0, height: 0}, {duration: 1.5, width: 100, he
 
 とりあえずこの３つだけでもある程度はできそう
 
+## イージング
+
+```javascript
+gsap.to("#test4 .box", {duration: 2, x: 200, ease: "bounce"});
+
+// gsap.to("#test4 .box", {duration: 2, x: 200, ease: "イージングタイプの指定"});
+// 簡単ですね
+// 動きの参考は以下
+// https://greensock.com/docs/v3/Eases/CustomEase
+```
+
+## staggersとdelay
+
+直訳でよろめき
+
+```javascript
+gsap.from(".box", {
+  duration: 2,
+  scale: 0.5, 
+  opacity: 0, 
+  delay: 0.5, 
+  stagger: 0.2, // ←これ！
+  ease: "elastic", 
+  force3D: true
+});
+
+// イージングにばらつきがでます
+// boxを何個も並べて試してみるとよい
+// delayもかけているので自動で順番にふわふわーと出てくる
+```
+

@@ -1,0 +1,10 @@
+dist
+package-lock.json
+yarn.lock
+node_modules
+.sass-cache
+.DS_Store
+.tmp
+.txt
+.map.css
+.

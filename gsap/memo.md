@@ -120,7 +120,7 @@ gsap.from(".box", {
   duration: 2,
   scale: 0.5, 
   opacity: 0, 
-  delay: 0.5, 
+  delay: 0.5, // ←これ！
   stagger: 0.2, // ←これ！
   ease: "elastic", 
   force3D: true
@@ -129,5 +129,24 @@ gsap.from(".box", {
 // イージングにばらつきがでます
 // boxを何個も並べて試してみるとよい
 // delayもかけているので自動で順番にふわふわーと出てくる
+```
+
+```javascript
+// とりあえず staggerのとこだけ注目
+gsap.to(".box", 1, {
+  scale: 0.1, 
+  y: 60,
+  yoyo: true, // たぶんループしろかな？（後で調べる
+  repeat: -1, 
+  ease: "power1.inOut",
+  delay:1,
+  stagger: {
+    amount: 1.5, 
+    grid: "auto",
+    from: "center"
+  }
+});
+
+// ボックスをマス目上に並べてこれを設定を追加するとおもしろい
 ```
 

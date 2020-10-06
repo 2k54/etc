@@ -23,17 +23,19 @@ GreenSock社が開発した高機能アニメーションライブラリ 現在G
 cssは自分がわかりやすいようにするために簡易的に色とサイズ指定くらいで試せます
 positionはとりあえず特に指定しなくても大丈夫
 
-margin-bottom: 10px;
-width: 100px;
-height: 100px;
-background-color: gray;
+.box {
+  margin-bottom: 10px;
+	width: 100px;
+	height: 100px;
+	background-color: gray;
+}
 
 ぐらいしか書いてない
 ```
 
 ```javascript
 gsap.to("#test1 .box", {duration: 2, x: 300}); // 共通
-gsap.to("#test1.box3", {duration: 5, x: 300}); // 個別みたいな書き方もできる
+gsap.to("#test1 .box3", {duration: 5, x: 300}); // 個別みたいな書き方もできる
 
 // gsap.to
 // もっとも一般的なタイプ
@@ -113,7 +115,7 @@ gsap.to("#test4 .box", {duration: 2, x: 200, ease: "bounce"});
 
 ## staggersとdelay
 
-直訳でよろめき
+staggersは直訳でよろめき
 
 ```javascript
 gsap.from(".box", {
@@ -126,7 +128,7 @@ gsap.from(".box", {
   force3D: true
 });
 
-// イージングにばらつきがでます
+// イージングにばらつきがでます？
 // boxを何個も並べて試してみるとよい
 // delayもかけているので自動で順番にふわふわーと出てくる
 ```
@@ -136,7 +138,7 @@ gsap.from(".box", {
 gsap.to(".box", 1, {
   scale: 0.1, 
   y: 60,
-  yoyo: true, // たぶんループしろかな？（後で調べる
+  yoyo: true,
   repeat: -1, 
   ease: "power1.inOut",
   delay:1,
@@ -147,7 +149,7 @@ gsap.to(".box", 1, {
   }
 });
 
-// ボックスをマス目上に並べてこれを設定を追加するとおもしろい
+// ボックスをマス目上に並べてこれを設定すると美しいアニメーションが見れる
 ```
 
 ## コールバック
@@ -180,5 +182,37 @@ function tweenComplete(message) {
 }
 
 // アニメーションが終わったら、tweenCompleteが動き、そこで引数を受け取って動作させる
+```
+
+## アニメーションを操作する
+
+```javascript
+// settimeOutとかを止めるときのように名前を付けてあげる
+
+const moveLogo = gsap.to("#logo", {duration: 1, x: 100});
+
+// moveLogo これに対してなんやかんやする
+
+// 一時停止
+moveLogo.pause();
+
+// 再開
+moveLogo.resume();
+
+// 逆再生（最初に戻る
+moveLogo.reverse();
+
+// ジャンプ（↓の場合は0.5秒地点へ）
+moveLogo.seek(0.5);
+
+// ジャンプ（↓の場合は1/4の地点へ）
+moveLogo.progress(0.25);
+
+// 再生速度
+moveLogo.timeScale(0.5); // 速度を半分に
+moveLogo.timeScale(2); // 速度を倍速に
+
+// アニメーションの強制終了
+moveLogo.kill();
 ```
 

@@ -235,5 +235,16 @@ tl.to("#test7 .box2", {duration: 1, x: 200, scale: 0.2});
 tl.to("#test7 .box3", {duration: 1, x: 200, scale: 2, y: 20});
 // ３つのboxが順番に動き、３つめまで動いたら、1秒開けて　また最初から動く
 // リピートを３回って指定だと計４回動きます（1回目はリピートではないから？
+
+// メソッドチェーンできるのでこうでもいいです
+tl.to("#test7 .box1", {duration: 1, x: 200}).to("#test7 .box2", {duration: 1, x: 200, scale: 0.2}).to("#test7 .box3", {duration: 1, x: 200, scale: 2, y: 20});
+
+// jQueryで繋げまくってた頃の悪夢が思い出されて目眩がするｗ
+
+tl.to("#test7 .box1", {duration: 1, x: 200})
+  .to("#test7 .box2", {duration: 1, x: 200, scale: 0.2})
+  .to("#test7 .box3", {duration: 1, x: 200, scale: 2, y: 20});
+// まだこうの方がいいですね
+// あまり複雑なのを繋げないほうがよいですね
 ```
 

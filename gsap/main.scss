@@ -6,3 +6,10 @@
     background-color: gray;
   }
 }
+#test2 {
+  > .box {
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+  }
+}

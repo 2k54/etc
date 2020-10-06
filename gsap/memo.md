@@ -9,6 +9,8 @@ GreenSock社が開発した高機能アニメーションライブラリ 現在G
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 ```
 
+### gsap.to()
+
 ```html
 <div id="test1">
   <div class="box1 box"></div>
@@ -29,15 +31,13 @@ background-color: gray;
 ぐらいしか書いてない
 ```
 
-
-
 ```javascript
-gsap.to(".box", {duration: 2, x: 300}); // 共通
-gsap.to(".box3", {duration: 5, x: 300}); // 個別みたいな書き方もできる
+gsap.to("#test1 .box", {duration: 2, x: 300}); // 共通
+gsap.to("#test1.box3", {duration: 5, x: 300}); // 個別みたいな書き方もできる
 
 // gsap.to
 // もっとも一般的なタイプ
-// gsap.to("何を", {何秒かけて: 2, どこへ: 300});
+// gsap.to("何を", {何秒かけて: 2, どこへ: 300});（↑でidも指定してるのは便宜上）
 // みたいな感じ
 // boxを2秒かけて300px横に動く
 // box3だけ　何秒かけてが5なので遅く動く
@@ -75,3 +75,15 @@ x: '50%' でも動いたけど
 **ショートコードを使ってください、なぜならそっちのほうが動作が早いから　みたいなことが書いてあったよ**
 
 ちなみに当たり前だけどJSなので font-sizeみたいな ケバブなプロパティは fontSize（キャメル）にしないとダメです
+
+### gsap.from()
+
+設定した値から何も指定ない状態になる？
+
+```javascript
+gsap.from("test2 .box", {duration: 1, x: 100});
+
+// 100px 右にあったものが
+// 1秒かけて 0に戻る
+// css側で left: 0;　などの指定はいらない
+```

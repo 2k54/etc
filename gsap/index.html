@@ -15,15 +15,15 @@
   </div>
   <div id="test2">
     <div class="box1 box"></div>
-    <div class="box2 box"></div>
-    <div class="box3 box"></div>
   </div>
   <script>
-    gsap.to(".box", {duration: 2, x: 300});
+    gsap.to("#test1 .box", {duration: 2, x: 300});
     // gsap.to(".box3", {duration: 5, x: '20%'});
-    gsap.to(".box1", {duration: 2, x: 300, backgroundColor: '#00ffff'});
-    gsap.to(".box2", {duration: 2, x: -10});
-    gsap.to(".box3", {duration: 2, x: 300, rotate: 90, scale: 0.5});
+    gsap.to("#test1 .box1", {duration: 2, x: 300, backgroundColor: '#00ffff'});
+    gsap.to("#test1 .box2", {duration: 2, x: -10});
+    gsap.to("#test1 .box3", {duration: 2, x: 300, rotate: 90, scale: 0.5});
+
+    gsap.from("#test2 .box", {duration: 3, x: 300, opacity: 0, scale: 0.5});
 
   </script>
 </body>

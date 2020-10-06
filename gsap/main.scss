@@ -55,3 +55,10 @@
     background-color: gray;
   }
 }
+#test8 {
+  > .box {
+    width: 100px;
+    height: 100px;
+    background-color: gray;
+  }
+}

@@ -113,22 +113,22 @@ gsap.to("#test4 .box", {duration: 2, x: 200, ease: "bounce"});
 // https://greensock.com/docs/v3/Eases/CustomEase
 ```
 
-## staggersとdelay
+## staggers
 
-staggersは直訳でよろめき
+staggersは直訳でよろめき（なぜよろめきで順番なのか？
 
 ```javascript
 gsap.from(".box", {
   duration: 2,
   scale: 0.5, 
   opacity: 0, 
-  delay: 0.5, // ←これ！
+  delay: 0.5,
   stagger: 0.2, // ←これ！
   ease: "elastic", 
   force3D: true
 });
 
-// イージングにばらつきがでます？
+// 自動で順番に動くようになる
 // boxを何個も並べて試してみるとよい
 // delayもかけているので自動で順番にふわふわーと出てくる
 ```
@@ -139,13 +139,13 @@ gsap.to(".box", 1, {
   scale: 0.1, 
   y: 60,
   yoyo: true,
-  repeat: -1, 
+  repeat: -1, // アニメーションの繰り返し回数。-1で無限回
   ease: "power1.inOut",
   delay:1,
   stagger: {
-    amount: 1.5, 
+    amount: 1.5, //1.5秒おきに
     grid: "auto",
-    from: "center"
+    from: "center" //どこからか
   }
 });
 
@@ -246,5 +246,29 @@ tl.to("#test7 .box1", {duration: 1, x: 200})
   .to("#test7 .box3", {duration: 1, x: 200, scale: 2, y: 20});
 // まだこうの方がいいですね
 // あまり複雑なのを繋げないほうがよいですね
+
+tl.to("#test7 .box1", {duration: 1, x: 200}, "<")
+  .to("#test7 .box2", {duration: 1, x: 200, scale: 0.2}, "<")
+  .to("#test7 .box3", {duration: 1, x: 200, scale: 2, y: 20}, "<");
+// ちなみにこうすると（"<"をつけてる）前のやつとスタートが同じになるので
+// ↑の場合は全部同時にスタートする（時間も同じなので一緒に終わる）
+```
+
+タイムラインは設定が色々できるが、それはとりあえず後で試す
+
+## 要素の現在の位置を取得する
+
+アロー関数は推奨しない
+
+```javascript
+let w = gsap.getProperty("#id", "width");
+
+gsap.to("#test8 .box", {x: 100, onUpdate: function() {
+  let elem = this.targets()[0];
+  console.log(gsap.getProperty(elem, "x"));
+} });
+
+// 移動先は設定に書くけど、それ受け取って何かしたいときとか？
+// ↑のサンプルはonUpdateなので動いてる経過の数字もみれるけど
 ```
 

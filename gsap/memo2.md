@@ -122,3 +122,24 @@ button.addEventListener("click", showContent);
 toggleActions: "play none none none"
 
 ↑これで設定かな？ この設定だとonEnterの時に playって設定かな？
+
+#### ぱららっくす
+
+```javascript
+gsap.to('.b', { // 動かしたい要素は".b"
+  x: 600, // 右方向に600動く
+  rotation: 360, // 開始〜終了までの間で360度回転する
+  duration: 1, // アニメーションは1秒間
+  scrollTrigger: {
+    trigger: '.b', // 要素".b"がビューポートに入ったときにアニメーション開始
+    start: 'top center', // アニメーション開始位置
+    end: 'top 300px', // アニメーション終了位置
+    scrub: true, // アニメーションをスクロール位置にリンクさせる
+    markers: true // マーカー表示
+  }
+})
+
+// scrubを設定すると　スクロール位置に応じてアニメーションの進捗がリンクする
+// これはすてき
+```
+
